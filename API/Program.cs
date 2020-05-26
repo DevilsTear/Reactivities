@@ -23,8 +23,9 @@ namespace API
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<DataContext>();
-                    context.Database.Migrate();
+                    var dbContext = services.GetRequiredService<DataContext>();
+                    dbContext.Database.Migrate();
+                    Seed.SeedData(dbContext);
                 }catch(Exception ex){
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occured during the migration");
