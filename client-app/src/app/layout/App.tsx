@@ -14,6 +14,7 @@ import ActivityForm from "../../features/activities/form/ActivityForm";
 import ActivityDetails from "../../features/activities/details/ActivityDetails";
 import NotFound from "./NotFound";
 import { ToastContainer } from "react-toastify";
+import 'mobx-react-lite/batchingForReactDom'
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
   return (
